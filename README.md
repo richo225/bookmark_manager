@@ -36,3 +36,6 @@ So I can find a relevant link
 I want to filter links by tags
 ```
 ## domain model
+
+![alt-text] [domain]
+[domain]:http://i66.tinypic.com/2iuou1g.jpg "domain model"
