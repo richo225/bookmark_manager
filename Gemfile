@@ -5,10 +5,15 @@ source "https://rubygems.org"
 ruby '2.3.1'
 
 # gem "rails"
-gem "sinatra"
-gem "rspec-sinatra"
-gem "capybara"
-gem "rspec"
+
+group :test do
+  gem "sinatra"
+  gem "rspec-sinatra"
+  gem "capybara"
+  gem "rspec"
+  gem 'database_cleaner'
+end
+
 
 gem "data_mapper"
 gem "dm-postgres-adapter"
