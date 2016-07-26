@@ -5,7 +5,7 @@ feature "List" do
   end
 
   scenario "User can view bookmarked websites" do
-    Link.create(url: "https://www.penisland.net", title: "Pens")
+    Link.create(title: "Pens", url: "https://www.penisland.net")
     visit "/links"
     expect(page).to have_content ("Pens")
   end
