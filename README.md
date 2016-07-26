@@ -27,5 +27,28 @@ I would like to add tags to the websites in my list
 ```
 As an unorganised web surfer
 So that I can search for websites of a specific category
-I would like to filter my list of website sby tag
+I would like to filter my list of website by tag
+```
+
+## CRUD
+
+```
+Create, Read, Update and Delete.
+The four major functions implemented in database applications.
+The CRUD functions are the user interfaces to databases as they permit the users
+to create, view, modify and alter data.
+CRUD works on entities in databases and manipulates these entities.
+Any simple databases table enforces CRUD constraints.
+```
+
+
+## SQL
+
+```
+Structured Query Language.
+Used to communicate with a database.
+* INSERT - adds new records.
+* SELECT - retrieves or selects existing records based on selection conditions.
+* UPDATE - modifies existing records.
+* DELETE - removes tables or records.
 ```
