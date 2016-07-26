@@ -41,7 +41,6 @@ CRUD works on entities in databases and manipulates these entities.
 Any simple databases table enforces CRUD constraints.
 ```
 
-
 ## SQL
 
 ```
