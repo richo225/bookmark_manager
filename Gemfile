@@ -12,7 +12,7 @@ group :test do
   gem 'capybara'
 end
 
-# gem 'rubocop'
-# gem 'rubocop-rspec'
-# gem 'coveralls', require: false
-# gem 'byebug'
+gem 'rubocop'
+gem 'rubocop-rspec'
+gem 'coveralls', require: false
+gem 'byebug'
