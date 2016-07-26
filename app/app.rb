@@ -1,12 +1,12 @@
 require 'sinatra/base'
 
-class BM < Sinatra::Base
+class BookmarkManager < Sinatra::Base
   get '/' do
     redirect '/links'
   end
 
   get '/links' do
-    
+
   end
 
   # start the server if ruby file executed directly

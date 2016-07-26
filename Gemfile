@@ -1,14 +1,18 @@
 source 'http://rubygems.org'
 
+gem 'sinatra'
+gem 'rack'
+
+gem 'dm-migrations'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
-gem 'dm-migrations'
-gem 'sinatra'
-gem 'rake'
-gem 'rspec-sinatra'
-gem 'rspec'
-gem 'rubocop-rspec'
-gem 'rubocop'
-gem 'coveralls', require: false
-gem 'capybara'
-gem 'byebug'
+
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+end
+
+# gem 'rubocop'
+# gem 'rubocop-rspec'
+# gem 'coveralls', require: false
+# gem 'byebug'
