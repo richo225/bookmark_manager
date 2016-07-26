@@ -2,7 +2,11 @@ require 'sinatra/base'
 
 class BM < Sinatra::Base
   get '/' do
-    'Hello BM!'
+    redirect '/links'
+  end
+
+  get '/links' do
+    
   end
 
   # start the server if ruby file executed directly
