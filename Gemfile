@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+ruby '2.3.1'
+
 gem 'sinatra'
 gem 'rack'
 
@@ -7,6 +9,7 @@ gem 'dm-migrations'
 gem 'dm-transactions'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
+gem 'pg'
 
 group :test do
   gem 'rspec'
