@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 feature 'shows list of links homepage' do
 
   scenario 'visit homepage' do
@@ -13,3 +14,4 @@ feature 'shows list of links homepage' do
   end
 
 end
+DatabaseCleaner.clean

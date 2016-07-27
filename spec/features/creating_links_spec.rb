@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'save website' do
-  # let(:link) { double Link.create(url: 'url_link', title: "new_link") }
+  # let(:link) { double Link.create(url: 'url_link', title: "added_link") }
   scenario 'add title and address to BookmarkManager' do
     visit '/'
     click_link 'Add links'
@@ -15,4 +15,7 @@ feature 'save website' do
       expect(page).to have_content 'added_link'
     end
   end
+
+  DatabaseCleaner.clean
+
 end
