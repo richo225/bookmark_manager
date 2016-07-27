@@ -8,7 +8,7 @@ class Link
 
   property :id, Serial
   property :title,  String
-  property :url, URI
+  property :url, String
 
 end
 
