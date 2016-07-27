@@ -1,6 +1,6 @@
 ## bookmark-manager
 
-epic
+Epic
 ---------
 ```
 As a Makers Student
