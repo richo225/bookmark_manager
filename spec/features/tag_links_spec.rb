@@ -18,6 +18,6 @@ feature "Tagging links" do
     fill_in 'tag', with: 'tag1 tag2'
     click_button 'submit'
     link = Link.first
-    expect(link.tags.map(&:name)).to include 'tag1,tag2'
+    expect(link.tags.map(&:name)).to include "tag1", "tag2"
   end
 end
