@@ -23,3 +23,19 @@ feature 'adds a tag' do
     expect(link.tags.map(&:name)).to include 'course'
   end
 end
+
+feature 'filter links' do
+  scenario 'check links with tag' do
+    adding_new_link
+    visit '/links/new'
+    fill_in 'title', with: 'Yahoo'
+    fill_in 'url', with: 'https://yahoo.com'
+    fill_in 'tag', with: 'bubbles'
+    click_button 'bookmark'
+
+    visit '/tags/bubbles'
+    expect(page.status_code).to eq(200)
+    expect(page).to have_content("Yahoo")
+    expect(page).not_to have_content("Github")
+  end
+end
