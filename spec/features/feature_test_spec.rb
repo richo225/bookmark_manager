@@ -16,11 +16,22 @@ feature 'save links' do
   end
 end
 
-feature 'adds a tag' do
-  scenario 'creates the tag' do
+feature 'adds tags' do
+  scenario 'creates a tag' do
     adding_new_link
     link = Link.first
     expect(link.tags.map(&:name)).to include 'course'
+  end
+  scenario 'creates multiple tags' do
+    visit'/links/new'
+    fill_in 'title', with: 'Makers'
+    fill_in 'url', with: 'https://makersacadeny.com'
+    fill_in 'tag', with: 'course, ronin, coding'
+    click_button 'bookmark'
+    link = Link.first
+    expect(link.tags.map(&:name)).to include 'course'
+    expect(link.tags.map(&:name)).to include 'ronin'
+    expect(link.tags.map(&:name)).to include 'coding'
   end
 end
 
