@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 feature 'shows list of links' do
   scenario 'of regularly visited websites' do
     Link.create(title: 'some_name', url: 'some_url')
@@ -13,10 +11,14 @@ end
 
 feature 'save links' do
   scenario 'with name and address' do
-    visit '/links/new'
-    fill_in 'title', with: 'Github'
-    fill_in 'url', with: 'https://github.com'
-    click_button 'bookmark'
+    adding_new_link
     expect(page).to have_content 'Github'
+  end
+end
+
+feature 'adds a tag' do
+  scenario 'creates the tag' do
+    adding_new_link
+    expect(page).to have_content 'course'
   end
 end
