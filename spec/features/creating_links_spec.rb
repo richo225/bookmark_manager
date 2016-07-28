@@ -15,7 +15,4 @@ feature 'save website' do
       expect(page).to have_content 'added_link'
     end
   end
-
-  DatabaseCleaner.clean
-
 end

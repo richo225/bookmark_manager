@@ -20,22 +20,20 @@ feature "Filtering links" do
   end
 
   scenario "User filters multiple links by a tag" do
-    visit '/'
-    click_link 'Add links'
-    fill_in 'title', with: 'added_link'
-    fill_in 'url', with: 'url_link'
-    fill_in 'tag', with: 'tag'
+    visit 'links/new'
+    fill_in 'title', with: 'link 1'
+    fill_in 'url', with: 'url_link 1'
+    fill_in 'tag', with: 'tag1'
     click_button 'submit'
 
-    visit '/'
-    click_link 'Add links'
-    fill_in 'title', with: 'something_different'
-    fill_in 'url', with: 'url_different'
-    fill_in 'tag', with: 'bubbles tag'
+    visit 'links/new'
+    fill_in 'title', with: 'link 2'
+    fill_in 'url', with: 'url_link 2'
+    fill_in 'tag', with: 'tag1 tag2'
     click_button 'submit'
 
-    visit 'tags/tag'
-    expect(page).to have_content ('url_different')
-    expect(page).to have_content ('url_link')
+    visit 'tags/tag1'
+    expect(page).to have_content ('url_link 1')
+    expect(page).to have_content ('url_link 2')
   end
 end
