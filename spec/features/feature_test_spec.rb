@@ -19,6 +19,7 @@ end
 feature 'adds a tag' do
   scenario 'creates the tag' do
     adding_new_link
-    expect(page).to have_content 'course'
+    link = Link.first
+    expect(link.tags.map(&:name)).to include 'course'
   end
 end
