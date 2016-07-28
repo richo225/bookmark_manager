@@ -39,8 +39,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/sign_up' do
-    User.create(email_address: params[:email_address],
-    password: params[:password])
+    User.create(email_address: params[:email_address], password: params[:password])
     redirect '/links'
   end
 
@@ -52,6 +51,3 @@ class BookmarkManager < Sinatra::Base
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
-
-#"tag1 tag2"
-#[tag1, tag2]
