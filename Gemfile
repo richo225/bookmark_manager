@@ -11,11 +11,12 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'pg'
 
-group :test do
+# group :test do
   gem 'rspec'
   gem 'capybara'
   gem 'database_cleaner'
-end
+  gem 'rspec-sinatra'
+# end
 
 gem 'rubocop'
 gem 'rubocop-rspec'
