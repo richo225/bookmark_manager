@@ -55,10 +55,10 @@ feature 'create user account' do
   before do
     visit '/sign-up'
     fill_in 'username', with: 'Fran'
-    fill_in 'email', with: 'fran@makers.com'
     fill_in 'password', with: 'guitar1234'
   end
   scenario 'I can sign up as a new user' do
+    fill_in 'email', with: 'fran@makers.com'
     fill_in 'password confirmation', with: 'guitar1234'
     expect{ click_button 'signup' }.to change(User, :count).by(1)
     expect(page).to have_content('Welcome, Fran')
@@ -67,9 +67,14 @@ feature 'create user account' do
   end
 
   scenario "Sign up fails if passwords don't match" do
+    fill_in 'email', with: 'fran@makers.com'
     fill_in 'password confirmation', with: 'drums1234'
     expect{ click_button 'signup' }.to change(User, :count).by(0)
     expect(page).to have_content("Please enter matching passwords")
   end
+
+  scenario "Sign up fails if email is empty" do
+    expect(page).to have_content("Please enter your e-mail")
+  end 
 
 end

@@ -6,7 +6,10 @@ class User
 
   property :id, Serial
   property :username, String
-  property :email, String
+  property :email, String, :required => true,
+    # :messages => {
+    #     :presence  => "Please enter your e-mail"
+    #   }
   property :password_digest, String, length: 60
   attr_accessor :password_confirmation
   attr_reader :password
@@ -17,5 +20,6 @@ class User
   end
 
   validates_confirmation_of :password
+
 
 end
