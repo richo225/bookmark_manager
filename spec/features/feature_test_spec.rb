@@ -59,10 +59,16 @@ feature 'create user account' do
     fill_in 'password', with: 'guitar1234'
   end
   scenario 'I can sign up as a new user' do
-    user = User.create(email: 'fran@makers.com', password: 'guitar1234')
+    fill_in 'password confirmation', with: 'guitar1234'
     expect{ click_button 'signup' }.to change(User, :count).by(1)
     expect(page).to have_content('Welcome, Fran')
     expect(User.first.email).to eq('fran@makers.com')
+  end
+
+  scenario "Sign up fails if passwords don't match" do
+    fill_in 'password confirmation', with: 'drums1234'
+    expect{ click_button 'signup' }.to change(User, :count).by(0)
+    # expect(page).to have_content("Please enter matching passwords")
   end
 
 end

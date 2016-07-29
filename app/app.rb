@@ -51,9 +51,11 @@ class BookmarkManager < Sinatra::Base
     user = User.create(
       username: params['username'],
       email: params['email'],
-      password: params['password'])
+      password: params['password'],
+      password_confirmation: params['password confirmation'])
     session[:user_id] = user.id
-    redirect '/welcome'
+    current_user
+    @current_user ? (redirect '/welcome') : (redirect '/sign-up')
   end
 
   get '/welcome' do
